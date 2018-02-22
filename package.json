@@ -1,0 +1,30 @@
+{
+  "name": "mock-services",
+  "version": "1.0.0",
+  "description": "Boilerplate for setting up express based mock services",
+  "main": "start.js",
+  "scripts": {
+    "start": "node start.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "mock-services",
+    "mock",
+    "api",
+    "fake-services"
+  ],
+  "author": "Dinesh Pandiyan <flexdinesh@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "commander": "^2.14.1",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0"
+  }
+}
