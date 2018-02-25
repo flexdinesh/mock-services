@@ -1,23 +1,17 @@
-
 const express = require('express');
+const bodyParser = require('body-parser');
+const routes = require('./routes');
 
 const app = express();
-
-const { getFooDetails } = require('./stubs/foo-details');
-
-const bodyParser = require('body-parser');
-
 app.use(bodyParser.json());
-
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-app.get('/foo/:id', (req, res) => {
-  const fooDetails = getFooDetails({
-    id: req.params.id,
-  });
-  res.send(fooDetails);
+app.get('/', (req, res) => {
+  res.send('Booyah - foo mock is up and running!');
 });
+
+app.use('/', routes);
 
 module.exports = app;
