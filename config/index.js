@@ -1,6 +1,8 @@
 module.exports = {
-  ports: {
-    foo: '3030',
-    bar: '6060'
+  foo: {
+    port: '3030'
   },
+  bar: {
+    port: '6060'
+  }
 };

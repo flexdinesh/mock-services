@@ -35,5 +35,5 @@ const startServer = (name, port) =>
     }
   });
 
-if (services.foo) startServer('foo', config.ports.foo);
-if (services.bar) startServer('bar', config.ports.bar);
+if (services.foo) startServer('foo', config.foo.port);
+if (services.bar) startServer('bar', config.bar.port);
