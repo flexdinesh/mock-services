@@ -1,10 +1,8 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const routes = require('./routes');
 
 const app = express();
-
-const { getBarDetails } = require('./stubs/bar-details');
-
-const bodyParser = require('body-parser');
 
 // file upload conf
 app.use(bodyParser.json({
@@ -18,9 +16,10 @@ app.use(bodyParser.urlencoded({
   parameterLimit: 50000
 }));
 
-app.get('/bar', (req, res) => {
-  const barDetails = getBarDetails();
-  res.send(barDetails);
+app.get('/', (req, res) => {
+  res.send('Booyah - bar mock is up and running!');
 });
+
+app.use('/', routes);
 
 module.exports = app;
