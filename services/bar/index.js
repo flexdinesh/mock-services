@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const routes = require('./routes');
-const { bar: { baseURL: apiBaseURL } } = require('../../config');
+const { bar: { baseURL: apiBaseURL, responseDelayTime = 0 } } = require('../../config');
+const { corsMiddleware, delayResponseMiddleware } = require('../middlewares');
 
 const app = express();
 
@@ -16,6 +17,9 @@ app.use(bodyParser.urlencoded({
   extended: true,
   parameterLimit: 50000
 }));
+
+corsMiddleware(app);
+delayResponseMiddleware(app, responseDelayTime);
 
 app.get('/', (req, res) => {
   res.send('Booyah - bar mock is up and running!');
